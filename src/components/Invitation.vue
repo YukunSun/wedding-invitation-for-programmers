@@ -4,11 +4,11 @@
       <div class="invitation-cover">
         <div class="cover-content" :class="{'invitation-up':isOpening}">
           <div class="content-inside">
-            <img class="content-inside-photo" src="../images/photo.jpg">
+            <img class="content-inside-photo" src="../images/2023.jpeg">
             <p>我们结婚啦！</p>
-            <p><b>Jun & undefined</b></p>
-            <p>时间：invalid date value</p>
-            <p>地点：<b>location can not be found</b></p>
+            <p><b>孙玉坤 & 高腾腾</b></p>
+            <p>时间：2024年2月5日(农历腊月廿六)</p>
+            <p>地点：<b>河南·鹿邑</b></p>
             <div class="content-inside-bless">
               <input
                 placeholder="写下你的祝福" 
@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       isOpening: false,
-      wish: '',
+      wish: '恭喜恭喜:)',
       isFocused: false,
       hasEntered: false
     }
