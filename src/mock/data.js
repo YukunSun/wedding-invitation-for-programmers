@@ -1,15 +1,23 @@
 export default {
   code: 
 `
-// 今日i心情非常好!
-// bao bei I love you
-// let's start
-const { 😆, 🤗 } = 🌎;
-😆.say('嫁给我吧!❤️');
-🤗.response('好的，只要你请我吃🍉！');
-Utils.marry(😆,🤗);
-Utils.generateInvitation(😆,🤗);
-// 好了我写完了
+在下有一机密
+即将告知于君
+吾婚 💃🕺
+速来 🚗🚁
+干饭 🍛🍻
+十年相守 🌸终成眷属
+良辰已定 ❤️吉日待访
+特邀各位 🧧共贺喜悦
+敬备喜筵 💌随候尊驾
+const { 😆孙玉坤 🤗高腾腾 } = 🍚🍤邀君干饭🍱🍷;
+😆孙玉坤.say('你文案写得不赖!❤️');
+🤗高腾腾.response('费用200，概不赊账🍉！');
+😆孙玉坤.say('我给你500，咱差钱吗？💸');
+🤗高腾腾.response('孙总霸气，各位见证，500到账💰！');
+Utils.marry(😆孙玉坤,🤗高腾腾);
+Utils.generateInvitation(此致敬礼,衷心期待您的光临！);
+// 好了在下写完了
 // 我要开始运行啦`,
   executions: [{
     name:'初始化',

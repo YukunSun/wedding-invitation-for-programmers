@@ -55,7 +55,10 @@
       }
     },
     created() {
-      this.startDate = (new Date()).toDateString()
+      let i = this.$utils.getUrlKey("i")
+      // let invitee = this.$utils.encodeBase62(i)
+      let invitee = this.$utils.decodeBase62(i)
+      this.startDate = (new Date()).toDateString()+ invitee
       this.progressivelyTyping()
     },
     updated() {
