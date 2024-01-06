@@ -6,7 +6,8 @@
         <a href="javascript:;" class="maximum"></a>
     </header>
     <!-- 日期 -->
-    <p class="code">Last login: <span>{{ startDate }}</span> on ttys001</p>
+<!--    <p class="code">Last login: <span>{{ startDate }}</span> on ttys001</p>-->
+    <p class="code"><span>{{ new Date().toLocaleDateString() }}：</span></p>
     <!--代码编辑区-->
     <pre>
       <code v-html="highlightedCode"></code>
@@ -55,10 +56,7 @@
       }
     },
     created() {
-      let i = this.$utils.getUrlKey("i")
-      // let invitee = this.$utils.encodeBase62(i)
-      let invitee = this.$utils.decodeBase62(i)
-      this.startDate = (new Date()).toDateString()+ invitee
+      this.startDate = (new Date()).toDateString()
       this.progressivelyTyping()
     },
     updated() {
@@ -81,6 +79,11 @@
       },
       // 代码输入
       progressivelyTyping() {
+        let i = this.$utils.getUrlKey("i")
+        let invitee = this.$utils.decodeBase62(i)
+        let inviteDescription = `hello ${invitee}，`
+        let code = inviteDescription + this.code
+
         return new Promise((resolve) => {
           let count = 0, typingCount = 0, typing
           // 写代码每一帧的函数
@@ -88,7 +91,7 @@
             let randomNumber = Math.round(Math.random() * 6)
             // 摸你打字的随机速度
             if(count % 2 === 0 && randomNumber % 4 === 0){
-              this.currentCode = this.code.substring(0, typingCount)
+              this.currentCode = code.substring(0, typingCount)
               typingCount++
             }
             // 大约每 24 帧光标闪动一次
@@ -96,7 +99,7 @@
               this.isCursorVisible = this.isCursorVisible === 0 ? 1 : 0
             }
             count++
-            if (typingCount <= this.code.length) {
+            if (typingCount <= code.length) {
               typing = requestAnimationFrame(step)
             } else {
               resolve()
